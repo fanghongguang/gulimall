@@ -13,7 +13,7 @@ package com.atguigu.common.utils;
  *
  * @author Mark sunlightcs@gmail.com
  */
-public class Constant {
+public class  Constant {
 	/** 超级管理员ID */
 	public static final int SUPER_ADMIN = 1;
     /**
