@@ -1,10 +1,13 @@
 package com.atguigu.gulimall.product;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 
 /**
  * 1、整合MyBatis-Plus
@@ -62,5 +65,10 @@ public class GulimallProductApplication {
     public static void main(String[] args) {
         SpringApplication.run(GulimallProductApplication.class, args);
     }
-
+    @Bean
+    public GlobalConfig globalConfig(){
+        GlobalConfig config = new GlobalConfig();
+        config.setDbConfig(new GlobalConfig.DbConfig().setIdType(IdType.AUTO));
+        return config;
+    }
 }
